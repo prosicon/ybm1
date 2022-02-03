@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+      <meta charset="utf-8">
+      {% load static %}
+      {% block css%}
+  <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"  media="screen,projection"/>
+      <style type="text/css">
+        nav{
+          background-color: #0d47a1;
+        }
+        .btn{
+          background-color: #42a5f5;
+        }
+        .btn:hover{
+          background-color: #1976d2;
+        }
+        .input.autocomplete {
+          color: #000;
+        }
+        .input-field .prefix.active {
+          color: #42a5f5!important;
+        }
+
+        .input-field .label.active {
+          color: #42a5f5!important;
+        }
+
+        .input-field .prefix.inactive {
+          color: #42a5f5!important;
+        }
+
+        .input-field .prefix {
+          color: #42a5f5!important;
+        }
+        .input-field:focus-within {
+          color: #42a5f5!important;
+        }
+        .dropdown-content li>a, .dropdown-content li>span {
+          color: #42a5f5!important;
+        }
+        .autocomplete-content {
+          color: red!important;
+        }
+        .autocomplete-items {
+          color: #42a5f5;
+        }
+
+        .input-field .prefix ~ input {
+          color: #bbdefb!important;
+        }
+
+        input[type=text]:not(.browser-default):focus:not([readonly]){
+          border-bottom: 1px solid white;
+          -webkit-box-shadow: 0 1px 0 0 white;
+          box-shadow: 0 1px 0 0 white;
+          color: white;
+        }
+
+
+
+        /* label color */
+   .input-field label {
+     color: #42a5f5;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #white;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #42a5f5;
+   }
+
+
+
+
+
+
+      </style>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      {% endblock css%}
+
+      {% block title %}<title>Yo brillo con Morelia</title>
+
+      {% endblock %}
+      <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">-->
+
+      <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+
+
+      <!-- Las sigs 3 lineas las agregue para cargar jqueri ui-->
+      <link rel="stylesheet" href="{% static "jquery-ui/jquery-ui.min.css" %}" />
+      <script src="{% static "jquery-ui/external/jquery/jquery.js" %}"></script>
+      <script src="{% static "jquery-ui/jquery-ui.min.js" %}"></script>
+      {% block head %}
+      <!--################ CABECERA GENERAL #####################-->
+<div class="blue darken-4">
+      <nav class="blue darken-4">
+        <div class="blue darken-4">
+        <div class="row">
+        <div class="col s0 m1 l1"></div>
+        <div class="col s4 m10 l8">
+        <div class="nav-wrapper">
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="{% url 'index' %}">Inicio</a></li>
+            <li><a href="{% url 'Productos' %}">Ofertas</a></li>
+            <li><a href="{% url 'Empresas' %}">Empresas participantes</a></li>
+            <li><a href="{% url 'pdf-descargar' %}">Ver Catálogo</a></li>
+            {% if user.is_authenticated %}
+              <li>{{ user.get_username }}</li>
+              <li><a href="{% url 'logout'%}?next={{request.path}}">Salir</a></li>
+            {% else %}
+              <li><a href="{% url 'login'%}?next={{request.path}}">Acceso</a></li>
+            {% endif %}
+          </ul>
+        </div>
+        </div>
+        <div class="col s8 m1 l3"></div>
+      </div>
+      </div>
+
+      </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="{% url 'index' %}">Inicio</a></li>
+    <li><a href="{% url 'Productos' %}">Ofertas</a></li>
+    <li><a href="{% url 'Empresas' %}">Empresas participantes</a></li>
+    <li><a href="{% url 'pdf-descargar' %}">Ver Catálogo</a></li>
+  </ul>
+        <!--################ ################ #####################-->
+
+        <!--################ MENU PRINCIPAL #####################-->
+
+      {% endblock head %}
+</div>
+</head>
+<body class="blue darken-4">
+
+  {% block content %}{% endblock %}
+
+  {% block pagination %}
+  <div class="blue darken-4">
+    {% if is_paginated %}
+    <div class="card-panel blue darken-4 white-text">
+    <ul class="pagination center-align">
+
+        {% if page_obj.has_previous %}
+        <li class="waves-effect">
+          <li class="active"><a href="{{ request.path }}?page=1"><i class="material-icons">first_page</i></a></li>
+          <li class="active"><a href="{{ request.path }}?page={{ page_obj.previous_page_number }}"><i class="material-icons">chevron_left</i></a></li>
+        {% else %}
+        <li class="disabled"><i class="material-icons">chevron_left</i></li>
+        </li>
+        {% endif %}
+        <li class="waves-effect">
+        <li class="disabled">Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</li>
+        </li>
+        {% if page_obj.has_next %}
+        <li class="waves-effect">
+          <li class="active"><a href="{{ request.path }}?page={{ page_obj.next_page_number }}"><i class="material-icons">chevron_right</i></a></li>
+          <li class="active"><a href="{{ request.path }}?page={{ page_obj.paginator.num_pages }}"><i class="material-icons">last_page</i></li>
+        {% else %}
+          <li class="disabled"><i class="material-icons">chevron_right</i></li>
+
+        </li>
+        {% endif %}
+
+      </ul>
+    </div>
+
+    {% endif %}
+    </div>
+  {% endblock %}
+
+  {% block javascript %}
+  <!--JavaScript at end of body for optimized loading-->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems);
+  });
+  </script>
+
+  {% endblock %}
+
+
+
+
+  </div>
+</div>
+
+</div>
+</body>
+</html>

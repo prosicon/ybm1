@@ -1,0 +1,27 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="col s2"></div>
+  <div class="col s8">
+<div class="card center-align white">
+
+<div class="card-content blue-text darken-4">
+  <span class="card-title black-text">{{ producto.nombre }}</span>
+  <div class="section">
+
+
+<p><strong>Empresa:</strong> <a href="{{ producto.empresa.get_absolute_url }}">{{ producto.empresa }}</a></p>
+<p><strong>Descripcion:</strong> {{ producto.descripcion }}</p>
+<p><strong>Beneficio:</strong> {{ producto.beneficio }}</p>
+<p><strong>Categoria:</strong> {{ producto.categoria.all|join:", " }}</p>
+
+</div>
+<div class="divider"></div>
+
+</div>
+</div>
+</div>
+<div class="col s2"></div>
+</div>
+{% endblock %}

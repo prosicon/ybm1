@@ -1,0 +1,142 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+
+<div class="blue darken-4">
+
+<div class="row">
+<div class="col s4 m6  center-align">
+
+  <a href="#" class="brand-logo"><img class="responsive-img" style="width=60%;height=60%;" alt="" src="{% static 'images/logo.png' %}"></a>
+
+</div>
+<div class="col s7 m5">
+<div id="container blue-text darken-4">
+    <div class="search">
+        <div class="searchbox">
+          <div class="row">
+            <div class="input-field">
+              <i class="material-icons prefix">search</i>
+            <input id="search_input" type="text" name="q" class="autocomplete">
+            <label for="search_input" class="blue-text">Busca una oferta o empresa participante...</label>
+            {% csrf_token %}
+            </div></div>
+        </div>
+        <div class="results">
+            <h1 class="error"></h1>
+            <div class="wrapper"></div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="col s1 m1"></div>
+</div>
+<div class="row white-text ">
+  <h5 class="center-align"><strong>Programa de Beneficios para colaboradores del H. Ayuntamiento de Morelia</strong>
+  </h5>
+
+</div>
+
+<div class="row">
+  <div class="col s1"></div>
+  <div class="col s10">
+<div class="card">
+
+<div class="card">
+
+  <div class="col s0 m1"></div>
+  <div class="col s12 m10">
+  <div class="card-content blue-text darken-4">
+
+<div class="carousel carousel-slider" style="width:100%; height:100%;">
+    <a class="carousel-item" href="#one!"><img src="{% static 'images/slides/anuncio001.png' %}"></a>
+    <a class="carousel-item" href="#two!"><img src="{% static 'images/slides/anuncio002.png' %}"</a>
+    <a class="carousel-item" href="#three!"><img src="{% static 'images/slides/anuncio003.png' %}"</a>
+    <a class="carousel-item" href="#four!"><img src="{% static 'images/slides/anuncio004.png' %}"></a>
+    <a class="carousel-item" href="#five!"><img src="{% static 'images/slides/anuncio005.png' %}"</a>
+    <a class="carousel-item" href="#one!"><img src="{% static 'images/slides/anuncio006.png' %}"></a>
+    <a class="carousel-item" href="#two!"><img src="{% static 'images/slides/anuncio007.png' %}"</a>
+    <a class="carousel-item" href="#three!"><img src="{% static 'images/slides/anuncio008.png' %}"</a>
+    <a class="carousel-item" href="#four!"><img src="{% static 'images/slides/anuncio009.png' %}"></a>
+    <a class="carousel-item" href="#five!"><img src="{% static 'images/slides/anuncio010.png' %}"</a>
+    <a class="carousel-item" href="#one!"><img src="{% static 'images/slides/anuncio011.png' %}"></a>
+    <a class="carousel-item" href="#two!"><img src="{% static 'images/slides/anuncio012.png' %}"</a>
+    <a class="carousel-item" href="#three!"><img src="{% static 'images/slides/anuncio013.png' %}"</a>
+    <a class="carousel-item" href="#four!"><img src="{% static 'images/slides/anuncio014.png' %}"></a>
+    <a class="carousel-item" href="#five!"><img src="{% static 'images/slides/anuncio015.png' %}"</a>
+    <a class="carousel-item" href="#one!"><img src="{% static 'images/slides/anuncio016.png' %}"></a>
+    <a class="carousel-item" href="#two!"><img src="{% static 'images/slides/anuncio017.png' %}"</a>
+    <a class="carousel-item" href="#three!"><img src="{% static 'images/slides/anuncio018.png' %}"</a>
+    <a class="carousel-item" href="#four!"><img src="{% static 'images/slides/anuncio019.png' %}"></a>
+    <a class="carousel-item" href="#five!"><img src="{% static 'images/slides/anuncio020.png' %}"</a>
+    <a class="carousel-item" href="#one!"><img src="{% static 'images/slides/anuncio021.png' %}"></a>
+    <a class="carousel-item" href="#two!"><img src="{% static 'images/slides/anuncio022.png' %}"</a>
+    <a class="carousel-item" href="#three!"><img src="{% static 'images/slides/anuncio023.png' %}"</a>
+    <a class="carousel-item" href="#four!"><img src="{% static 'images/slides/anuncio024.png' %}"></a>
+    <a class="carousel-item" href="#five!"><img src="{% static 'images/slides/anuncio025.png' %}"</a>
+    <a class="carousel-item" href="#one!"><img src="{% static 'images/slides/anuncio026.png' %}"></a>
+    <a class="carousel-item" href="#two!"><img src="{% static 'images/slides/anuncio027.png' %}"</a>
+    <a class="carousel-item" href="#three!"><img src="{% static 'images/slides/anuncio028.png' %}"</a>
+    <a class="carousel-item" href="#four!"><img src="{% static 'images/slides/anuncio029.png' %}"></a>
+    <a class="carousel-item" href="#five!"><img src="{% static 'images/slides/anuncio030.png' %}"</a>
+    <a class="carousel-item" href="#one!"><img src="{% static 'images/slides/anuncio031.png' %}"></a>
+    <a class="carousel-item" href="#two!"><img src="{% static 'images/slides/anuncio032.png' %}"</a>
+    <a class="carousel-item" href="#three!"><img src="{% static 'images/slides/anuncio033.png' %}"</a>
+    <a class="carousel-item" href="#four!"><img src="{% static 'images/slides/anuncio034.png' %}"></a>
+    <a class="carousel-item" href="#five!"><img src="{% static 'images/slides/anuncio035.png' %}"</a>
+    <a class="carousel-item" href="#one!"><img src="{% static 'images/slides/anuncio036.png' %}"></a>
+    <a class="carousel-item" href="#two!"><img src="{% static 'images/slides/anuncio037.png' %}"</a>
+    <a class="carousel-item" href="#three!"><img src="{% static 'images/slides/anuncio038.png' %}"</a>
+    <a class="carousel-item" href="#four!"><img src="{% static 'images/slides/anuncio039.png' %}"></a>
+    <a class="carousel-item" href="#five!"><img src="{% static 'images/slides/anuncio040.png' %}"</a>
+    <a class="carousel-item" href="#five!"><img src="{% static 'images/slides/anuncio041.png' %}"</a>
+    <a class="carousel-item" href="#five!"><img src="{% static 'images/slides/anuncio042.png' %}"</a>
+    <a class="carousel-item" href="#five!"><img src="{% static 'images/slides/anuncio043.png' %}"</a>
+  </div>
+
+</div>
+</div>
+<div class="col s0 m1"></div>
+</div>
+
+</div>
+</div>
+<div class="col s1"></div>
+</div>
+
+
+
+
+
+
+<div class="row">
+  <div class="col s1"></div>
+  <div class="col s10">
+  <div class="right-align">
+<ul>
+<li><strong>Productos:</strong> {{ num_Productos }}</li>
+<li><strong>Empresas:</strong> {{ num_Empresas }}</li>
+</ul>
+<p>Tienes {{ num_visits }} visita{{ num_visits|pluralize }} a este sitio. Gracias.</p>
+</div>
+</div>
+<div class="col s1"></div>
+</div>
+{% block js %}
+<script type="text/javascript" src="{% static 'js/busqueda.js' %}"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.carousel');
+      var instances = M.Carousel.init(elems, { indicators: true, fullWidth: true,} );
+    });
+
+  window.onload=function() {
+    var elems = document.querySelectorAll('.carousel');
+    var instances = M.Carousel.getInstance(elems[0]);
+    setInterval(function(){instances.next(); }, 10000);
+  };
+</script>
+</div>
+{% endblock %}
+{% endblock %}

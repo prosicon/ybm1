@@ -1,0 +1,33 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<div class="row center-align">
+  <div class="col s5">
+    <a href="#" class="brand-logo"><img class="responsive-img" style="width=60%;height=60%;" alt="" src="{% static 'images/logo.png' %}"></a>
+  </div>
+  <div class="col s5">
+<div class="card center-align blue darken-4">
+
+<div class="card-content blue-text darken-4">
+  <span class="card-title black-text"></span>
+    <ul>
+      <li>
+        <a href="{% static 'pdf/catalogo-yo-brillo-con-morelia.pdf' %}" class="btn btn-primary btn-sm" target="_blank">Ver catálogo</a>
+      </li>
+
+
+    </ul>
+  </div>
+  </div>
+  </div>
+  <div class="col s2"></div>
+  </div>
+
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="col s2"></div>
+  <div class="col s8">
+<div class="card center-align white">
+
+<div class="card-content blue-text darken-4">
+  <span class="card-title black-text">{{ empresa.nombre }}</span>
+  <div class="section">
+<p>{{empresa.descripcion}}</p>
+<p>{% if empresa.direccion %}Dirección: {{empresa.direccion}}{% endif %}</p>
+<p>{% if empresa.telefono %}Teléfono: {{empresa.telefono}}{% endif %}</p>
+<p>{% if empresa.email %}Coreo: {{empresa.email}}{% endif %}</p>
+<p>{% if empresa.facebook %}Facebook: {{empresa.facebook}}{% endif %}</p>
+<p>{% if empresa.web %}Sitio web:{{empresa.web}}{% endif %}</p>
+</div>
+<div class="divider"></div>
+<div class="section">
+<div style="margin-left:20px;margin-top:20px">
+<span class="card-title black-text">Beneficios:</span>
+<ul>
+{% for producto in empresa.producto_set.all %}
+  <li><a href="{% url 'Producto-detail' producto.pk %}">{{producto}}</a></li>
+  <li>{{producto.descripcion}}</li>
+{% endfor %}
+</ul>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<div class="col s2"></div>
+</div>
+{% endblock %}

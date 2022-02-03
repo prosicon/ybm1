@@ -1,0 +1,34 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="col s1"></div>
+  <div class="col s10">
+<div class="card">
+
+<div class="card-content blue-text darken-4">
+  <span class="card-title black-text">Listado de Beneficios</span>
+    {% if producto_list %}
+    <ul>
+
+      {% for producto in producto_list %}
+
+
+      <div class="section">
+        <a href="{{ producto.get_absolute_url }}">{{ producto.nombre }}</a> ({{producto.empresa}})
+      </div>
+      <div class="divider"></div>
+      {% endfor %}
+
+    </ul>
+
+    {% else %}
+      <p>No hay productos registrados</p>
+    {% endif %}
+  </div>
+  </div>
+  </div>
+  <div class="col s1"></div>
+  </div>
+
+{% endblock %}

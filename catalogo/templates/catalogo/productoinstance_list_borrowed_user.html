@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Borrowed Productos</h1>
+
+    {% if Productoinstance_list %}
+    <ul>
+
+      {% for Productoinst in Productoinstance_list %} 
+      <li class="{% if Productoinst.is_overdue %}text-danger{% endif %}">
+        <a href="{% url 'Producto-detail' Productoinst.Producto.pk %}">{{Productoinst.Producto.title}}</a> ({{ Productoinst.due_back }})        
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>There are no Productos borrowed.</p>
+    {% endif %}       
+{% endblock %}
+

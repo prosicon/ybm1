@@ -1,0 +1,37 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="row">
+  <div class="col s1"></div>
+  <div class="col s10">
+<div class="card">
+
+<div class="card-content blue-text darken-4">
+  <span class="card-title black-text">Listado de Empresas Participantes</span>
+
+
+{% if empresa_list %}
+  <ul>
+
+  {% for empresa in empresa_list %}
+    <div class="section">
+      <a href="{{ empresa.get_absolute_url }}">
+      {{ empresa }}</a>
+      ({% if empresa.telefono %}Tel: {{empresa.telefono}}{% endif %})
+
+    </div>
+    <div class="divider"></div>
+  {% endfor %}
+
+ </ul>
+{% else %}
+  <p>No hay empresas registradas.</p>
+{% endif %}
+</div>
+</div>
+</div>
+<div class="col s1"></div>
+</div>
+
+
+{% endblock %}
