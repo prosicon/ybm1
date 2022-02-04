@@ -20,16 +20,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag'
 import os
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
-#DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
-DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
+DEBUG = False
+
 # Set hosts to allow any app on Heroku and the local testing URL
 ALLOWED_HOSTS = ['yobrilloconmorelia.mx','127.0.0.1'] #['.herokuapp.com','127.0.0.1']
 
@@ -153,4 +151,4 @@ STATIC_URL = '/static/'
 
 # Static file serving.
 # http://whitenoise.evans.io/en/stable/django.html#django-middleware
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

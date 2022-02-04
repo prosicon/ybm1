@@ -45,13 +45,8 @@ function __init()
                   //console.log(nombre);
                   //console.log(empresa);
                     var productos = [];
-                    //alert("aqui toi apa",data[0].nombre);
                     for(var x in data)
                     {
-                      //console.log(data[x].fields['nombre']);
-                      //console.log(data[x].fields['empresa']);
-                      //console.log(data[x].fields['data']);
-                      //alert("aqui toi apa")
                         productos.push({
                             nombre : data[x].nombre,
                             empresa : data[x].empresa,
@@ -84,12 +79,10 @@ function __init()
                 $('.results .error').empty().hide();
         }
     }).autocomplete('instance')._renderItem = function(ul, item) {
-    ///.autocomplete('instance')._renderItem = function(ul, item) {
-    ///console.log("............");
-    ///console.log(item.nombre);
+        var empresa_esc = item.empresa.replace(/ /g, "_");
         var enlace =  '<a href="Empresa/busqueda/';
-        var produc = enlace + item.empresa + '" />';
-        var producto_tmpl = $('<div />') ///crea un elemento div
+        var produc = enlace + empresa_esc + '" />';
+        var producto_tmpl = $('<div />')
                         .addClass('empresa')
                         .append(produc).find('a').addClass('empresa').html(item.empresa)
                         .parent()

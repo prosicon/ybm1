@@ -182,7 +182,7 @@ def busqueda(request, produc):
 
 def busqueda_empresa(request, empr):
         model = Empresa
-        e = Empresa.objects.get(nombre=empr)
+        e = Empresa.objects.get(nombre=empr.replace('_',' '))
         #context = {'object': p}
         #return render(request, 'album/category_detail.html', context)
         #producto = Producto.objects.filter(nombre__exact= request.POST['nombre'] ).values('nombre')
